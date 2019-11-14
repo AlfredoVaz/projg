@@ -5,9 +5,11 @@
  */
 package br.web;
 
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,11 +27,12 @@ public class JsfCidade implements Serializable {
     
     private int codigo;
     private String nome;
+    private String latitude;
+    private String longitude;
 
     public int getCodigo() {
         return codigo;
     }
-
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
@@ -37,16 +40,33 @@ public class JsfCidade implements Serializable {
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public void persist(){
+    public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+	
+	public void persist(){
         br.data.entity.Cidade cid = new br.data.entity.Cidade();
-        cid.setCodigo(codigo);
-        cid.setNome(nome);
-        new br.data.crud.CrudCidade().persist(cid);
+        if(codigo != 0){
+        	cid.setCodigo(codigo);
+	        cid.setNome(nome);
+	        cid.setLatitude(latitude);
+	        cid.setLongitude(longitude);
+	        new br.data.crud.CrudCidade().persist(cid);
+        } else {
+        	JOptionPane.showMessageDialog(null, "O código da cidade não pode ser 0");
+        }
     }
     
     public java.util.Collection<br.data.entity.Cidade> getAll(){

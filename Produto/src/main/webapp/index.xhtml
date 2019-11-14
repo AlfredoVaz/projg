@@ -9,27 +9,36 @@
         Produto
         <h:form>
         	<label>Codigo</label>
-            <h:inputText value="#{jsfCidade.codigo}" placeholder="Digite o codigo" style="background-color: orange;"/>
+            <h:inputText value="#{jsfCidade.codigo}" placeholder="Digite o codigo" />
             <label>Nome</label>
-            <h:inputText value="#{jsfCidade.nome}" placeholder="Digite o nome" style="background-color: orange;"/>
+            <h:inputText value="#{jsfCidade.nome}" placeholder="Digite o nome" />
+            <label>Altitude</label>
+            <h:inputText value="#{jsfCidade.latitude}" placeholder="Digite o nome" />
+            <label>Latitude</label>
+            <h:inputText value="#{jsfCidade.longitude}" placeholder="Digite o nome" />
             <h:commandButton action="#{jsfCidade.persist()}" value="Salvar"/>
         </h:form>
         
-        <h:form>
-            <h:dataTable value="#{jsfCidade.all}" var="cid">
-            <h:column>
-                <h:outputText value="#{cid.codigo}" />
-            </h:column>
-         <h:column>
-                <h:outputText value="#{cid.nome}" />
-            </h:column>
-        
-            </h:dataTable>
-            </h:form>
+		<h:form>
+			<h:dataTable value="#{jsfCidade.all}" var="cid">
+				<h:column>
+					<h:outputText value="#{cid.codigo}" />
+				</h:column>
+				<h:column>
+					<h:outputText value="#{cid.nome}" />
+				</h:column>
+				<h:column>
+					<h:outputText value="#{cid.longitude}" />
+				</h:column>
+				<h:column>
+					<h:outputText value="#{cid.latitude}" />
+				</h:column>
+			
+			</h:dataTable>
+		</h:form>
     </h:body>
     <p>https://github.com/vegasbr/GerenciaTrab</p>
-    <p>https://github.com/AlfredoVaz/projg/tree/cli1</p>
-    <p>https://github.com/AlfredoVaz/projg/tree/cli2</p>
+    <p>https://github.com/AlfredoVaz/projg/tree/cli3</p>
     <p>Alfredo Vaz   Beatriz Schwartz   Beatriz Forcato   Gilberto Falco   Juliana Yukari   Luis Farias</p>
 </html>
 

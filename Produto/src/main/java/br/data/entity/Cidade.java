@@ -34,6 +34,10 @@ public class Cidade implements Serializable {
     private Integer codigo;
     @Column(name = "nome")
     private String nome;
+    @Column(name = "latitude")
+    private String latitude;
+    @Column(name = "longitude")
+    private String longitude;
 
     public Cidade() {
     }
@@ -57,8 +61,23 @@ public class Cidade implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    public String getLatitude() {
+		return latitude;
+	}
 
-    @Override
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (codigo != null ? codigo.hashCode() : 0);
