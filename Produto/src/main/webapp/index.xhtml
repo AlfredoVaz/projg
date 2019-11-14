@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Produto
+        <h:form>
+        	<label>Codigo</label>
+            <h:inputText value="#{jsfCidade.codigo}" placeholder="Digite o codigo"/>
+            <label>Nome</label>
+            <h:inputText value="#{jsfCidade.nome}" placeholder="Digite o nome"/>
+            <h:commandButton action="#{jsfCidade.persist()}" value="Salvar"/>
+        </h:form>
+        
+        <h:form>
+            <h:dataTable value="#{jsfCidade.all}" var="cid">
+            <h:column>
+                <h:outputText value="#{cid.codigo}" />
+            </h:column>
+         <h:column>
+                <h:outputText value="#{cid.nome}" />
+            </h:column>
+        
+            </h:dataTable>
+            </h:form>
+    </h:body>
+    <p>https://github.com/vegasbr/GerenciaTrab</p>
+    <p></p>
+    <p></p>
+    <p>Alfredo Vaz   Beatriz Schwartz   Beatriz Forcato   Gilberto Falco   Juliana Yukari   Luis Farias</p>
+</html>
+
