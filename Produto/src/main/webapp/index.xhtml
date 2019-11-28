@@ -21,7 +21,9 @@
         Produto
         <h:form>
         	<label>Codigo</label>
-            <h:inputText value="#{jsfCidade.codigo}" placeholder="Digite o codigo" id="codigo"/>
+            <h:inputText value="#{jsfCidade.codigo}" placeholder="Digite o codigo" id="codigo"> 
+				<f:validateLongRange minimum="1" />
+			</h:inputText>
             <label>Nome</label>
             <h:inputText value="#{jsfCidade.nome}" placeholder="Digite o nome"/>
             <h:commandButton action="#{jsfCidade.persist()}" value="Salvar" onclick="verificarCodigo()"/>
