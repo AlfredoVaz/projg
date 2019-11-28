@@ -1,19 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<script>
-    $( document ).ready(function() {
-       var codigo = document.getElementById("codigo");
-        function verificarCodigo(e) {
-           if(codigo === 0){
-               alert("Código não pode ser igual a zero")
-               e.preventDefault();
-           }
-       }
-    });
-</script>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -21,9 +11,11 @@
         Produto
         <h:form>
         	<label>Codigo</label>
-            <h:inputText value="#{jsfCidade.codigo}" placeholder="Digite o codigo" id="codigo"/>
+            <h:inputText value="#{jsfCidade.codigo}" id="codigo"> 
+		<f:validateLongRange minimum="1" />
+	    </h:inputText>
             <label>Nome</label>
-            <h:inputText value="#{jsfCidade.nome}" placeholder="Digite o nome"/>
+            <h:inputText value="#{jsfCidade.nome}" />
             <h:commandButton action="#{jsfCidade.persist()}" value="Salvar" onclick="verificarCodigo()"/>
         </h:form>
         
