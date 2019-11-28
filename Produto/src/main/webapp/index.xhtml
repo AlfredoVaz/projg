@@ -10,10 +10,10 @@
     <h:body>
         Produto
         <h:form>
-        	<label>Codigo</label>
+            <label>Codigo</label>
             <h:inputText value="#{jsfCidade.codigo}" id="codigo"> 
 		<f:validateLongRange minimum="1" />
-	    </h:inputText>
+            </h:inputText>
             <label>Nome</label>
             <h:inputText value="#{jsfCidade.nome}" />
             <h:commandButton action="#{jsfCidade.persist()}" value="Salvar" onclick="verificarCodigo()"/>
