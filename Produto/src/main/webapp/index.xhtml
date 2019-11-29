@@ -8,32 +8,29 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Produto
-        <h:form>
-            <label>Codigo</label>
-            <h:inputText value="#{jsfCidade.codigo}" id="codigo"> 
-		<f:validateLongRange minimum="1" />
-            </h:inputText>
-            <label>Nome</label>
-            <h:inputText value="#{jsfCidade.nome}" />
-            <h:commandButton action="#{jsfCidade.persist()}" value="Salvar" onclick="verificarCodigo()"/>
-        </h:form>
-        
-        <h:form>
-            <h:dataTable value="#{jsfCidade.all}" var="cid">
-            <h:column>
-                <h:outputText value="#{cid.codigo}" />
-            </h:column>
-         <h:column>
-                <h:outputText value="#{cid.nome}" />
-            </h:column>
-        
-            </h:dataTable>
-            </h:form>
+	Produto
+	<h:form>
+		<label>Codigo</label>
+		<h:inputText value="#{jsfCidade.codigo}" id="codigo"> 
+			<f:validateLongRange minimum="1" />
+		</h:inputText>
+		<label>Nome</label>
+		<h:inputText value="#{jsfCidade.nome}" />
+		<h:commandButton action="#{jsfCidade.persist()}" value="Salvar" onclick="return(confirm('Teste'));"/>
+	</h:form>
+	<h:form>
+		<h:dataTable value="#{jsfCidade.all}" var="cid">
+		<h:column>
+			<h:outputText value="#{cid.codigo}" />
+		</h:column>
+		<h:column>
+			<h:outputText value="#{cid.nome}" />
+		</h:column>
+		</h:dataTable>
+	</h:form>
+         
     </h:body>
-    <p>https://github.com/vegasbr/GerenciaTrab</p>
-    <p></p>
-    <p></p>
+    <p>https://github.com/AlfredoVaz/projg</p>
     <p>Alfredo Vaz   Beatriz Schwartz   Beatriz Forcato   Gilberto Falco   Juliana Yukari   Luis Farias</p>
 </html>
 
